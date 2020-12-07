@@ -28,18 +28,21 @@ if (isset($_POST['update'])) {
 
 ?>
 <?php include('includes/header.php'); ?>
+
 <div class="container p-4">
   <div class="row">
     <div class="col-md-4 mx-auto">
-      <div class="card card-body">
+      <div class="card card-body" style="border-radius:20px;">
       <form action="edit.php?id=<?php echo $_GET['id']; ?>" method="POST">
         <div class="form-group">
-          <input name="title" type="text" class="form-control" value="<?php echo $title; ?>" placeholder="Update Title">
+          <label for="exampleInputEmail1">Titulo</label>
+          <input name="title" type="text" class="form-control rounded-pill" value="<?php echo $title; ?>" placeholder="Update Title">
         </div>
         <div class="form-group">
-        <textarea name="description" class="form-control" cols="30" rows="10"><?php echo $description;?></textarea>
+        <label for="exampleInputEmail1">Descripcion</label>
+        <textarea name="description" rows="2" class="form-control rounded-pill" cols="30" rows="10"><?php echo $description;?></textarea>
         </div>
-        <button class="btn-success" name="update">
+        <button class="btn btn btn-outline-dark btn-block rounded-pill" name="update">
           Update
         </button>
       </form>
@@ -48,3 +51,4 @@ if (isset($_POST['update'])) {
   </div>
 </div>
 <?php include('includes/footer.php'); ?>
+

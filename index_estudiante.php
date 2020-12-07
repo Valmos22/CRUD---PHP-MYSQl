@@ -1,9 +1,27 @@
+<?php
+// session_start();
+// if(!isset($_SESSION['rol'])){
+//     header('location: index.php');
+// }else{
+//     if($_SESSION['rol'] != 1){
+//         header('location: index.php');
+//     }
+// }
+?>
+
 <?php include("db.php"); ?>
 
 <?php include('includes/header.php'); ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiante</title>
+</head>
+<body>
 <main class="container p-4">
-    <div class="row rounded-pill" style="display: flex; justify-content: center; align-items: center;">
+    <div class="row">
         <div class="col-md-4">
             <!-- MESSAGES -->
 
@@ -17,25 +35,22 @@
             <?php session_unset(); } ?>
 
             <!-- ADD TASK FORM -->
-            <div class="card card-body" style="border-radius:20px; box-shadow: 4px 6px 8px grey">
+            <div class="card card-body">
                 <form action="save_task.php" method="POST">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Titulo</label>
-                        <input type="text" style="box-shadow: 4px 6px 8px grey;" name="title" class="form-control rounded-pill" placeholder="Titulo" autofocus>
+                        <input type="text" name="title" class="form-control" placeholder="Titulo" autofocus>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Descripcion</label>
-                        <textarea name="description" rows="1" style="box-shadow: 4px 6px 8px grey;" class="form-control rounded-pill" placeholder="Descripcion"></textarea>
+                        <textarea name="description" rows="2" class="form-control" placeholder="Descripcion"></textarea>
                     </div>
-                    <input type="submit" name="save_task" style="box-shadow: 4px 6px 8px grey;" class="btn btn btn-outline-dark btn-block rounded-pill" value="Guardar Tarea">
+                    <input type="submit" name="save_task" class="btn btn-success btn-block" value="Guardar Tarea">
                 </form>
             </div>
         </div>
-
         <!-- Mostrar task en tabla -->
-        <div class="col-md-12 ver-tarea rounded-pill" style="margin-top: 20px">
-            <table class="table table-bordered" style="border-radius:20px;">
-                <thead class="thead-dark" style="border-radius: 20px">
+        <div class="col-md-8">
+            <table class="table table-bordered">
+                <thead>
                     <tr>
                         <th>Titulo</th>
                         <th>Descripcion</th>
@@ -65,9 +80,11 @@
                   <?php } ?>
                 </tbody>
             </table>
-            <a type="submit" href="imprimir.php" style="box-shadow: 4px 6px 8px grey;" class="btn btn-outline-dark rounded-pill">Imprimir Tareas</a>
+            <a type="submit" href="imprimir.php" class="btn btn-success btn-block">Imprimir</a>
         </div>
     </div>
 </main>
 
 <?php include('includes/footer.php'); ?>
+</body>
+</html>

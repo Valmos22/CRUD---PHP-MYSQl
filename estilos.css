@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.inicio {
+    height: 60px;
+    border-radius: 20px solid;
+    background-color: rgba(78, 77, 80, 0.5);
+    text-align: center;
+    width: 10px;
+}
